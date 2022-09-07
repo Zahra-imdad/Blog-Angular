@@ -1,34 +1,40 @@
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light py-2">
   <div class="container">
     <a class="navbar-brand text-light" href="#">Blogs</a>
-    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
       <span class="navbar-toggler-icon text-light"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item active" *ngIf="userLogged">
-          <a class="nav-link text-light" routerLink="/home" routerLinkActive="active" >Home <span class="sr-only">(current)</span></a>
+        <li class="nav-item active">
+          <a class="nav-link text-light" routerLink="/home" routerLinkActive="active"
+            *ngIf="authService.isLoggedIn">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" routerLink="/add_blog" routerLinkActive="active" *ngIf="userLogged">Add Blog</a>
+          <a class="nav-link text-light" routerLink="/add_blog" routerLinkActive="active"
+            *ngIf="authService.isLoggedIn">Add Blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light " routerLink="/edit" routerLinkActive="active" *ngIf="userLogged">Edit Blog</a>
+          <a class="nav-link text-light" routerLink="/edit" routerLinkActive="active" *ngIf="authService.isLoggedIn">My
+            Blogs</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" routerLink="/login" href="#" *ngIf="!userLogged" routerLinkActive="active">Login</a>
+          <a class="nav-link text-light" routerLink="/login" href="#" *ngIf="!authService.isLoggedIn"
+            routerLinkActive="active">Signin</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-light" routerLink="/register" *ngIf="!userLogged"  routerLinkActive="active">Register</a>
-          </li>
-          <li class="nav-item">
-            <button class="nav-link text-light bg-danger px-2" routerLink="/" *ngIf="userLogged" (click)="logout()">Logout</button>
-          </li>
+          <a class="nav-link text-light" routerLink="/register" *ngIf="!authService.isLoggedIn"
+            routerLinkActive="active">Signup</a>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link text-light bg-danger px-2" routerLink="/" *ngIf="authService.isLoggedIn"
+            (click)="logout()">
+            Logout
+          </button>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
-
-
-
