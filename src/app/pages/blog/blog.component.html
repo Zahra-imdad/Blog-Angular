@@ -1,0 +1,47 @@
+
+ <div class="container">
+    <div  *ngFor="let blog of blogs" >
+        <div class="m-2 pt-5">
+            <div class="card-body d-flex flex-column ">
+              <h2 class="card-title text-uppercase py-2">{{blog.title}}</h2>
+              <p class="card-text text-capitalize py-2" [innerHTML]="blog.content">{{blog.content}}</p>
+              <p class="card-text py-2">Blog By: <small class="text-danger text-capitalize fw-bold">{{blog.authorDetail.username | uppercase}}   </small></p>
+              <p class="card-text"><small class="text-success ">{{blog.postedAt | date:'short'}} </small></p>
+              <div *ngIf="blog.tags.length">
+                
+                <p class="card-text py-2">Tags: <span class="badge rounded-pill bg-danger py-2 px-3 mb-2 mx-1" *ngFor="let tag of blog.tags"> {{tag}}</span></p>
+              </div>
+              
+              <h4 class="card-text py-3"><small class="text-muted ">{{commentsCount}} Comments</small></h4>
+              
+              <app-comments [blogId]="blog._id" (commentHandle)="parentComment($event)"></app-comments>
+              
+                <div class="row " *ngFor="let check of commentHandle">
+                    <div class="card m-2 show-comments" >
+                        <div class="card-body d-flex flex-column  ">
+                            <div class="user-icon py-3">
+                                <i class="fa fa-user-circle-o d-flex align-items-center " aria-hidden="true">
+                                    <small class="px-2">{{check.userName | uppercase}}</small>
+                                </i>
+                            </div>
+                            <div>
+                                <h6 class="card-title text-uppercase " >{{ check.comment }}</h6>
+                                <p class="card-text">Commented At: <small class="text-success">{{check.postedAt | date:'short'}}</small></p>
+                                
+                            </div>
+                           
+                           
+                          </div>
+                    </div>
+                </div>
+              </div>
+              <div class="m-2">
+                <button class="mt-3 p-2 btn btn-primary px-2" (click)="back()">Back</button>
+              </div>
+             
+              </div>
+             
+    </div>
+
+
+  

@@ -1,0 +1,35 @@
+
+<div class="main-home" *ngIf="!oneBlog">
+    <div class="container pt-5">
+        
+        <h1 class="blog text-center pt-3 pb-5 position-relative">BLOGS</h1>
+        <span class="line"></span>
+        <div class="card-group" id="blogCard">
+          <div class="row" >
+            <div class="col-12 col-md-12 col-lg-6 col-xxl-4" *ngFor="let blog of blogs | paginate: { itemsPerPage: 9, currentPage: page ,totalItems: totalLength}">
+                <div class="card m-4">
+                    <div class="card-body d-flex flex-column align-items-center ">
+                      <h4 class="card-title text-uppercase py-2">{{blog.title | slice : 0  : 50 }}</h4>
+                      <p class="card-text text-capitalize" [innerHTML]="blog.content | slice : 0  : 550 "> </p>
+                      <button type="button" class="btn btn-background text-white btn-sm p-2 mb-3" (click)="Blog(blog)">Read More</button>
+                      <p class="card-text">Blog By: <small class="text-danger text-capitalize fw-bold">{{blog.authorDetail.username | uppercase}}   </small></p>
+                      <p class="card-text"><small class="text-success ">{{blog.postedAt | date:'short'}} </small></p>
+                     
+                      <div>
+                        <p class="text-muted">Total Comments: {{blog.comments.length}}</p>
+                      </div>
+                      <div >
+                        <span class="badge rounded-pill bg-danger py-2 px-3 mb-2 mx-1" *ngFor="let tag of blog.tags">{{tag}}</span>
+                      </div>
+                      </div>
+                    </div>
+            </div>
+          </div>
+          </div>
+</div>
+<pagination-controls (pageChange)="page = $event" class="d-flex justify-content-center py-5"></pagination-controls>
+</div>
+
+
+
+        

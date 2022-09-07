@@ -1,0 +1,48 @@
+
+ <div class="container  pt-5">
+    <form [formGroup]="fg" (submit)="register()">
+        <h1 class="signup position-relative pb-5 text-center ">Register</h1>
+    
+      <div class="mb-3 flex-column d-flex justify-content-center align-items-center text-center">
+        <div *ngIf="registerError" class="alert alert-danger" role="alert">
+          Registration Failed
+        </div>
+        </div>
+        <div class="mb-3 flex-column d-flex justify-content-center align-items-center text-center">
+          <div *ngIf="userRegistered" class="alert alert-danger" role="alert">
+            Email Already Exists
+          </div>
+      </div>
+      <div class="mb-3 flex-column d-flex justify-content-center align-items-center">
+        <label for="username" class="form-label ">Username</label>
+        <input type="text" class="form-control" name="username" id="username" placeholder="Jonh Doe" formControlName="username" >
+        <span class="text-danger" *ngIf="UsernameInput.touched && UsernameInput.errors" >Username is Invalid!</span>
+        <span class="text-danger" *ngIf=" UsernameInput.errors?.['minlength']" >Min Length 4 !</span>
+        
+      </div>
+    <div class="mb-3 flex-column d-flex justify-content-center align-items-center">
+        <label for="email" class="form-label ">Email address</label>
+        <input type="text" name="email" class="form-control" id="email" placeholder="name@example.com" formControlName="email" >
+        <span class="text-danger" *ngIf="EmailInput.touched && EmailInput.errors" >Email is Invalid!</span>
+      </div>
+      <div class="mb-3 flex-column d-flex justify-content-center align-items-center">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" name="password" class="form-control" id="password"  placeholder="********" formControlName="password">
+        <span class="text-danger" *ngIf="PasswordInput.touched && PasswordInput.errors">Password is Required!</span>
+      </div>
+      <div class="mb-3 flex-column d-flex justify-content-center align-items-center">
+        <button type="submit" class="btn btn-primary mb-2" id="submitBtn" >
+          
+          <span *ngIf="!Loading">Register</span>
+          <div class="spinner-border text-light" role="status" *ngIf="Loading">
+              <span class="visually-hidden">Loading</span>
+            </div>
+        </button>
+        <a routerLink="/login" class="text-decoration-none ">Already Registered? Click here to Login</a>
+      </div>
+     
+    </form>
+    
+
+</div>
+

@@ -1,0 +1,69 @@
+<div class="container mt-5">
+  
+    <h1 class="blog text-center pt-3 pb-5 position-relative ">ADD BLOG</h1>
+   
+    <form  [formGroup]="fg" (submit)="addBlogs()">
+      <div class="form-group row p-2 ">
+        <div class="col-sm-10 col-lg-4">
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <strong>{{uploaded}}</strong>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group row p-2">
+        <label for="title" class="col-sm-2 col-form-label text-dark">Title</label>
+        <div class="col-sm-10 ">
+          <input type="text" class="form-control" name="title" id="titleAdd" placeholder="Blog Title Here" formControlName="title"> 
+          <p class="text-danger " *ngIf="TitleInput.errors">Title is Required!</p>
+        </div>
+      </div>
+
+      <div class="form-group row p-2">
+        <label for="title" class="col-sm-2 col-form-label text-dark">Tag</label>
+        <div class="col-sm-10 ">
+          <tag-input  
+            [ngModelOptions]="{standalone: true}" 
+            [(ngModel)]="tag"
+            (onAdd)="onTagAdd($event)"
+            (onRemove)="onTagRemove($event)"
+            [maxItems]='3' 
+            [modelAsStrings]="true"
+            theme='dark'>
+        </tag-input>
+        </div>
+      </div>
+      
+      <div class="form-group row p-2">
+        <label for="content" class="col-sm-2 col-form-label text-dark">Blog content</label>
+        <div class="col-sm-10">
+          <div style="height:27px">
+            <angular-editor 
+              [placeholder]="'Enter text here...'"  
+              formControlName="content"  >
+          </angular-editor>
+            <p class="text-danger " *ngIf="ContentInput.errors?.['required']">Content is Required!</p>
+            <p class="text-danger " *ngIf="ContentInput.errors?.['minlength']">Atleast 200 words!</p>
+            <button type="submit" id="addBlogBtn" class="btn btn-lg btn-block text-light mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Blog</button>
+          </div>
+          
+         
+        </div>
+      </div>
+    </form>
+  </div>
+  
+ 
+  

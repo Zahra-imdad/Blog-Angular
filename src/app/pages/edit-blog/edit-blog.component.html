@@ -1,0 +1,89 @@
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <strong>{{actionStatus}}</strong>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container my-5 pb-5 editBlog" *ngIf="showDiv" id="editDiv">
+      <h1 class="blog text-center pt-3 pb-5 position-relative">EDIT BLOG</h1>
+      <form method="post" >
+
+        <div class="form-group row p-2">
+          <label for="title" class="col-sm-2 col-form-label text-dark">Title</label>
+          <div class="col-sm-10 ">
+            <input type="email" name="title" class="form-control" placeholder="name@example.com" #inputTitle value="{{editVal}}"> 
+          </div>
+        </div>
+
+        <div class="form-group row p-2">
+          <label for="title" class="col-sm-2 col-form-label text-dark">Tags</label>
+          <div class="col-sm-10 ">
+            <tag-input  
+              [(ngModel)]="tag" 
+              [maxItems]='3' theme='dark' 
+              [ngModelOptions]="{standalone: true}" 
+              (onAdd)="onTagAdd($event)"
+              (onRemove)="onTagRemove($event)"
+              [modelAsStrings]="true"
+            ></tag-input>
+          </div>
+        </div>
+
+        <div class="form-group row p-2">
+          <label for="content" class="col-sm-2 col-form-label text-dark">Content</label>
+          <div class="col-sm-10 ">
+            <div style="height:27px">
+              <angular-editor 
+                [placeholder]="'Enter text here...'"  
+                [(ngModel)]="contentVal" 
+                [ngModelOptions]="{standalone: true}"
+                >
+            </angular-editor>
+              <button type="submit" id="EditBlogBtn" class="btn btn-primary btn-lg btn-block editbtn my-3" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="updateBlog($event)">Edit Blog</button>
+            </div> 
+          </div>
+        </div>
+      
+  
+      </form>
+    </div>
+
+    <div class="container mt-2 pt-5">
+    
+      <h1 class="blog text-center pt-3 pb-5 position-relative">MY BLOGS</h1>
+      <h4 class=" text-center pt-2 pb-3 text-dark">{{totalBlogs}} Blogs</h4>
+      <div class="card-group" id="blogCard">
+        <div class="row">
+            <div class="card my-3" *ngFor="let blog of blogs">
+                <div class="card-body  d-flex flex-column align-items-center ">
+                    <h4 class="card-title text-uppercase p-2" #cardTitle>{{blog.title}}</h4>
+                    <p class="card-text text-capitalize" #cardContent [innerHTML]="blog.content"></p>
+                    
+                    <p class="card-text"><small class="text-success ">{{blog.postedAt}}</small></p>
+                    <p class="card-text">Blog By :<small class="text-danger fw-bold"> {{blog.authorDetail.username | uppercase}}</small></p>
+                    <div *ngIf="blog.tags.length">
+                      <p class="card-text py-2" >Tags: 
+                        <span class="badge rounded-pill bg-danger py-2 px-3 mb-2 mx-1" *ngFor="let tag of blog.tags" #cardTags> {{tag}}</span></p>
+                    </div>
+                    <div class="p-2 icon-footer">
+                      <i class="bi bi-pencil-square text-primary m-1" (click)="edit(blog,$event)"></i>
+                      <i class="bi bi-trash text-danger"  data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="delete(blog,$event)" ></i>
+                    </div>
+                  </div>
+            </div>
+        </div>
+      </div>
+   </div>
+
+   

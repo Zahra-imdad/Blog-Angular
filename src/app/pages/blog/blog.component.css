@@ -1,0 +1,12 @@
+.fa-user-circle-o{
+    font-size:32px;
+}
+.user-icon i small{
+    font-size: 16px;
+}
+.show-comments:hover{
+    background-color: rgb(225, 221, 221);
+}
+.btn{
+    background-color: #10082a;
+}

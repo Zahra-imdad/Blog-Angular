@@ -1,0 +1,14 @@
+nav{
+    background-color: #10082a !important;
+}
+.active{
+    color: rgb(170, 174, 174) !important;
+}
+a.nav-link.text-light {
+    display: block;
+    width: 100px;
+    
+}
+button{
+    border-radius: 8px;
+}

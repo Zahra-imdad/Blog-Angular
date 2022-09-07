@@ -1,0 +1,33 @@
+
+ <div class="container mt-5 pt-5">
+  <form [formGroup]="fg" (submit)="login()">
+        <h1 class="login position-relative pb-5 text-center">Login</h1>
+        
+          <div class="mb-3 flex-column d-flex justify-content-center align-items-center text-center">
+            <div *ngIf="loginError" class="alert alert-danger" role="alert">
+              Login Failed!
+            </div>
+          </div>
+        <div class="mb-3 flex-column d-flex justify-content-center align-items-center">
+            <label for="email" class="form-label ">Email address</label>
+            <input type="text" class="form-control" id="email" placeholder="name@example.com" formControlName="email">
+            <span class="text-danger" *ngIf="EmailInput.touched && EmailInput.errors" >Email is Invalid!</span>
+          </div>
+          <div class="mb-3 flex-column d-flex justify-content-center align-items-center">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" formControlName="password" placeholder="name@example.com">
+            <span class="text-danger" *ngIf=" PasswordInput.touched && PasswordInput.errors">Password is Required!</span>
+
+          </div>
+          <div class="mb-3 flex-column d-flex justify-content-center align-items-center">
+            <button type="submit" class="btn btn-primary mb-2" id="submitBtn"  >
+                <span *ngIf="!Loading">Login</span>
+                <div class="spinner-border text-light" role="status" *ngIf="Loading">
+                    <span class="visually-hidden">Loading</span>
+                  </div>
+            </button>
+            <a routerLink="/register" class="text-decoration-none ">Not have an account? Click here to Signup</a>
+          </div>
+        </form>
+
+</div>
