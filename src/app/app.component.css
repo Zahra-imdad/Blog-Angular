@@ -1,15 +1,25 @@
-body,.btn{
+::ng-deep *{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 17px; 
+}
+::ng-deep .btn{
     background-color: #10082a !important;
 }
-.blog::after{
+
+::ng-deep .blog::after{
     content: '';
-    width: 8%;
+    width: 5%;
     height: 4px;
     position: absolute;
     border-bottom: 5px solid #10082a;
     bottom: 29px;
-    right: 46%;
+    right: 47%;
 }
-.blog{
-    color: #10082a;
+::ng-deep .btn{
+    background-color: #10082a;
 }
+::ng-deep .form-control:focus,::ng-deep button {
+    box-shadow: none;
+    border: 1px solid #10082a;
+}
+

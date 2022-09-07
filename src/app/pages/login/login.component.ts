@@ -9,14 +9,13 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  disabled:boolean=true
-  email:string= ''
-  password:string=''
+
   id:string=''
   loginError=false
   Loading=false
   fg:any = new FormControl()
   fb = new FormBuilder()
+  clicked:boolean=false;
 
   constructor(private authService: AuthService,private router:Router) { }
 
@@ -28,28 +27,9 @@ export class LoginComponent implements OnInit {
   }
 
   Validators(){
-    
     this.fg = this.fb.group({
       email: ['',[Validators.required,Validators.email]],
       password:['',Validators.required]
-    })
-  }
-  login(){
-   
-    this.loginError=false
-    this.Loading=true
-    console.log(this.fg.value)
-    this.authService.login(this.id,this.fg.value.email,this.fg.value.password).subscribe((data:any)=>{
-      console.log(`LOGIN SUCESS`,data)
-      localStorage.setItem('token',data.token)
-      localStorage.setItem('uid',data.id)
-      this.router.navigate(['/home'])
-    },
-    err=>{
-      this.loginError=true
-      console.log(err.message)
-    },()=>{
-      this.Loading=false;
     })
   }
   get EmailInput(){
@@ -58,6 +38,26 @@ export class LoginComponent implements OnInit {
   get PasswordInput(){
     return this.fg.get('password')
   }
+
+  login(){
+    this.clicked = true
+    this.loginError=false
+    this.Loading=true
+    console.log(this.id)
+    this.authService.login(this.id,this.fg.value.email,this.fg.value.password).subscribe((data:any)=>{
+      console.log(`LOGIN SUCESS`,data)
+      localStorage.setItem('token',data.token)
+      localStorage.setItem('uid',this.id)
+      this.router.navigate(['/home'])
+      this.authService.isLoggedIn=true;
+    },
+    err=>{
+      this.loginError=true
+      this.Loading=false;
+      console.log(err.message)
+    })
+  }
+  
 
  
 }

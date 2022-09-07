@@ -1,6 +1,4 @@
-/* .main-home,.btn{
-    background-color: #10082a !important;
-} */
+
 h1{
     color: #10082a !important;
 }
@@ -9,24 +7,11 @@ h1{
     transition: all 0.45s ease;
     border-color: #10082a;
 }
-.blog::after{
-    content: '';
-    width: 5%;
-    height: 4px;
-    position: absolute;
-    border-bottom: 5px solid #10082a;
-    bottom: 29px;
-    right: 47%;
-}
-.btn{
-    background-color: #10082a;
-}
+
 :host ::ng-deep .ngx-pagination li.current {
     /* padding: 10px 15px; */
     background-color: #10082a !important;
 }
-
-/* .card.m-4 {
-    height: 
-    550px !important;
-} */
+.card.m-4 {
+    height:  570px !important;
+}

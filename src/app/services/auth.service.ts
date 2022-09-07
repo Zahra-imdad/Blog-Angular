@@ -11,10 +11,9 @@ export class AuthService {
 
   public notifyLogin$ = new Subject()
   public notifyId$ = new Subject();
+  isLoggedIn = localStorage.getItem("token") ? true : false;
 
   getToken(){
-    // this.notifyLogin$.next(true)
-    // return localStorage.getItem('token')
     let token = localStorage.getItem('token');
     if(token) this.notifyLogin$.next(true);
     return token;
@@ -29,7 +28,4 @@ export class AuthService {
   register(username:string,email:string,password:string){
     return this.httpClient.post(`http://localhost:3000/register/register`,{username,email,password})
   }
-  // register(users:string){
-  //   return this.httpClient.post(`http://localhost:3000/register`,{users})
-  // }
 }

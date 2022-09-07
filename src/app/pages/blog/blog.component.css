@@ -7,6 +7,6 @@
 .show-comments:hover{
     background-color: rgb(225, 221, 221);
 }
-.btn{
-    background-color: #10082a;
+::ng-deep .tag{
+    font-size: 15px;
 }

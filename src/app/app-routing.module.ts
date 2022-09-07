@@ -10,9 +10,6 @@ import { AddBlogComponent } from './pages/add-blog/add-blog.component';
 import { EditBlogComponent } from './pages/edit-blog/edit-blog.component';
 import { BlogComponent } from './pages/blog/blog.component';
 
-
-
-
 const routes:Routes =[
   { path: '',   redirectTo: '/login', pathMatch: 'full' },
   {

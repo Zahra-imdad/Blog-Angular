@@ -1,21 +1,11 @@
-*{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
-}
+
 .nav-link:hover{
     color: gray;
 }
-body,.btn{
+body,.btn {
     background-color: #10082a !important;
 }
-.btn-background{
-    background-color: #A9A947;
-}
-form.d-flex.flex-column.align-items-center {
-    align-items: center;
-    justify-content: center;
-    min-height: 500px;
-}
-input,.alert-danger{
-    width: 40%;
+
+::ng-deep .sign-shadow{
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 #10082a;
 }

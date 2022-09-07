@@ -1,24 +1,11 @@
-.blog{
-    color: #10082a !important;
-}
-.editbtn{
-    background-color: #10082a;
-}
-.blog::after{
-    content: '';
-    width: 5%;
-    height: 4px;
-    position: absolute;
-    border-bottom: 5px solid #10082a;
-    bottom: 29px;
-    right: 47%;
-}
+
+
 .bi-trash,.bi-pencil-square{
     font-size: 24px;
 }
-:host ::ng-deep .angular-editor-textarea{
+ ::ng-deep .angular-editor-textarea{
     min-height: 200px !important;
 }
 form.ng-untouched.ng-pristine.ng-valid {
-    padding-bottom: 160px;
+    margin-bottom: 320px;
 }

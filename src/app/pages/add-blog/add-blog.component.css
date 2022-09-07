@@ -1,18 +1,4 @@
-.blog::after{
-    content: '';
-    width: 8%;
-    height: 4px;
-    position: absolute;
-    border-bottom: 5px solid #10082a;
-    bottom: 29px;
-    right: 46%;
-}
-.blog{
-    color: #10082a;
-}
-#addBlogBtn{
-    background-color: #10082a;
-}
+
 :host ::ng-deep .angular-editor-textarea{
-    min-height: 200px !important;
+    min-height: 150px !important;
 }
