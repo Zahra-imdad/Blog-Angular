@@ -11,7 +11,7 @@
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
-                <input type="text" class="form-control" id="email" placeholder="name@example.com"
+                <input type="email" class="form-control" id="email" placeholder="name@example.com"
                   formControlName="email" />
                 <span class="text-danger py-1" *ngIf="EmailInput.touched && EmailInput.errors">Email is Invalid!</span>
                 <span class="text-danger py-1" *ngIf="EmailInput.errors?.['required'] && clicked">Email is Required!</span>
@@ -19,7 +19,7 @@
               <div class="mb-3 pt-3">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" formControlName="password"
-                  placeholder="name@example.com" />
+                  placeholder="*******" />
                 <span class="text-danger" *ngIf="PasswordInput.touched && PasswordInput.errors">Password is
                   Required!</span>
                   <span class="text-danger py-1" *ngIf="PasswordInput.errors?.['required'] && clicked">Password is Required!</span>
