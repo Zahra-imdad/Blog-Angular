@@ -1,27 +1,13 @@
-# MyBlog
+![screencapture-localhost-4200-register-2022-09-08-11_45_22](https://user-images.githubusercontent.com/50780469/189057285-8ce9d642-ec8d-42d9-b16f-86cef3716f12.png)
+![screencapture-localhost-4200-login-2022-09-08-11_45_11](https://user-images.githubusercontent.com/50780469/189057294-97cb380b-6c19-4033-8b3f-9a9855c2f83a.png)
+![screencapture-localhost-4200-home-2022-09-08-10_59_49](https://user-images.githubusercontent.com/50780469/189057519-263808bd-d089-4d4c-8fe2-1756a3ea189f.png)
+![screencapture-localhost-4200-blog-631661e2928413e0023d90db-2022-09-08-11_00_18](https://user-images.githubusercontent.com/50780469/189057536-8f69975b-494d-41d4-b87a-b3316c09abc4.png)
+![screencapture-localhost-4200-add-blog-2022-09-08-11_01_33](https://user-images.githubusercontent.com/50780469/189057599-90eb9342-e6a7-48d3-899f-4d5a54ebbd04.png)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
 
-## Development server
+![screencapture-localhost-4200-add-blog-2022-09-08-11_01_46](https://user-images.githubusercontent.com/50780469/189057665-797b3232-66d3-45e9-ad3f-8b2b2d4eb03d.png)
+![edited](https://user-images.githubusercontent.com/50780469/189057735-3254aa52-b8ed-432d-b0ed-3f9f2676df66.PNG)
+![Capture](https://user-images.githubusercontent.com/50780469/189057740-b454d083-65a2-406f-922f-a8fb878a6114.PNG)
+![screencapture-localhost-4200-edit-2022-09-08-11_02_20](https://user-images.githubusercontent.com/50780469/189057742-ef404473-6444-41ce-a6f9-91dc4736f244.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
