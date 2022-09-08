@@ -38,8 +38,6 @@ export class BlogComponent implements OnInit {
     if(this.commentHandle.length !== this.commentsCount){
       this.commentsCount++
     }
-    console.log("PARENT COMENT CHECK",this.commentHandle.reverse())
-    console.log("PARENT Length",this.commentHandle.length)
   }
   
 }

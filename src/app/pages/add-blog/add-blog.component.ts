@@ -25,7 +25,7 @@ export class AddBlogComponent implements OnInit {
   ngOnInit(): void {
     this.fg = this.fb.group({
       title: ['', [Validators.required]],
-      content: ['', [Validators.required, Validators.minLength(550)]],
+      content: ['', [Validators.required, Validators.minLength(200)]],
     });
   }
   get TitleInput() {
@@ -37,7 +37,6 @@ export class AddBlogComponent implements OnInit {
 
   addBlogs() {
     this.clicked=true
-    console.log(this.TitleInput);
     if (this.TitleInput.value == '' || this.ContentInput.value == '') {
       this.uploaded = 'UPLOAD FAILED';
     } else {

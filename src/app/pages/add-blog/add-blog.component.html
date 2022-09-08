@@ -46,7 +46,7 @@
           <angular-editor [placeholder]="'Enter text here...'" formControlName="content">
           </angular-editor>
           <p class="text-danger " *ngIf="ContentInput.errors?.['required'] && clicked">Content is Required!</p>
-          <p class="text-danger " *ngIf="ContentInput.errors?.['minlength']">Atleast 550 words!</p>
+          <p class="text-danger " *ngIf="ContentInput.errors?.['minlength']">Atleast 200 words!</p>
           <button type="submit" id="addBlogBtn" class="btn btn-lg btn-block text-light my-3 border-0"
             data-bs-toggle="modal" data-bs-target="#exampleModal">Add Blog</button>
         </div>
