@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
     this.loginError=false
     this.Loading=true
     console.log(this.id)
-    this.authService.login(this.id,this.fg.value.email,this.fg.value.password).subscribe((data:any)=>{
+    this.authService.login(this.fg.value.email,this.fg.value.password).subscribe((data:any)=>{
       console.log(`LOGIN SUCESS`,data)
       localStorage.setItem('token',data.token)
       localStorage.setItem('uid',this.id)

@@ -15,8 +15,8 @@ export class BlogService {
   getOneBlog(id:any){
     return this.httpClient.get(`http://localhost:3000/blog/get_blogs/${id}`,)
   }
-  addNewBlog(title:string, content:string,tags:any, authorDetail:any){
-    return this.httpClient.post(`http://localhost:3000/blog/add_blog`,{title, content,tags, authorDetail})
+  addNewBlog(title:string, content:string,tags:any){
+    return this.httpClient.post(`http://localhost:3000/blog/add_blog`,{title, content,tags})
   }
   CurrentUserBlogs(id:any){
     return this.httpClient.get(`http://localhost:3000/blog/current_user_blogs/${id}`,)

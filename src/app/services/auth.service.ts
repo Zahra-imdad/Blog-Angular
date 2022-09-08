@@ -22,8 +22,8 @@ export class AuthService {
     this.notifyId$.next(true)
     return localStorage.getItem('uid')
   }
-  login(id:any,email:string,password:string){
-    return this.httpClient.post(`http://localhost:3000/login/login`,{id,email,password})
+  login(email:string,password:string){
+    return this.httpClient.post(`http://localhost:3000/login/login`,{email,password})
   }
   register(username:string,email:string,password:string){
     return this.httpClient.post(`http://localhost:3000/register/register`,{username,email,password})

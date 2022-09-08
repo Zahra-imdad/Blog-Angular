@@ -52,7 +52,6 @@ export class AddBlogComponent implements OnInit {
             this.fg.value.title,
             this.fg.value.content,
             this.tag,
-            userId
           )
           .subscribe(
             (data: any) => {
